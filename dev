@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# function dev() {
+#     if [ -e dev ]
+#     then
+#         ./dev "$@"
+#     else
+#         echo "There isn't a 'dev' file here."
+#     fi
+# }
+
+IMAGE=tailwindcss:rp
+
+if [ $# -gt 0 ]; then
+
+    if [ "$1" == "build" ]; then
+        shift 1
+        docker build -t $IMAGE -f ./Dockerfile .
+
+    elif [ "$1" == "bash" ]; then
+        shift 1
+        docker run -it --rm -w /opt -v $PWD/project:/opt $IMAGE bash 
+
+    elif [ "$1" == "ctw" ]; then
+        shift 1
+        docker run -it --rm -w /opt -v $PWD/project:/opt $IMAGE ./app/build-tw.sh
+
+    # else
+        #docker-compose "$@"
+        # echo 
+
+    fi
+
+else
+    echo "--------------"
+    echo "dev shortcuts:"
+    echo "--------------"
+    echo "dev build            Build tailwindcss:rp image"
+    echo "dev bash             Run Bash in container"
+    echo "dev ctw              Compile Tailwind"
+fi

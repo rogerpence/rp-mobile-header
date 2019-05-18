@@ -1,0 +1,18 @@
+.
+├── dev
+├── dirlist.txt
+├── Dockerfile
+└── project
+   ├── app
+   │  ├── build-tw.sh
+   │  ├── dist
+   │  │  └── tailwind-full.css
+   │  ├── src
+   │  │  ├── article.html
+   │  │  └── home.html
+   │  ├── tailwind.config.js
+   │  └── tw-style-base.css
+   ├── config-shared-dir.sh
+   ├── node_modules...
+   ├── package-lock.json
+   └── package.json
