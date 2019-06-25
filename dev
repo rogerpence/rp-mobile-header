@@ -9,7 +9,17 @@
 #     fi
 # }
 
-IMAGE=tailwindcss:rp
+
+
+# Use export IMAGE=[image name] before calling this script. 
+# It defaults to naming the image tailwindcss:rp
+
+if [ -z "$IMAGE" ]
+then
+    IMAGE=tailwindcss:rp
+fi 
+
+echo Using image name: $IMAGE
 
 if [ $# -gt 0 ]; then
 
@@ -21,14 +31,17 @@ if [ $# -gt 0 ]; then
         shift 1
         docker run -it --rm -w /opt -v $PWD/project:/opt $IMAGE bash 
 
-    elif [ "$1" == "ctw" ]; then
+    elif [ "$1" == "tw-version" ]; then
+        shift 1
+        docker run -it --rm -w /opt -v $PWD/project:/opt $IMAGE npx tailwind --version
+
+    elif [ "$1" == "tw-update" ]; then
+        shift 1
+        docker run -it --rm -w /opt -v $PWD/project:/opt $IMAGE npm install tailwind --save-dev
+
+    elif [ "$1" == "tw-compile" ]; then
         shift 1
         docker run -it --rm -w /opt -v $PWD/project:/opt $IMAGE ./app/build-tw.sh
-
-    # else
-        #docker-compose "$@"
-        # echo 
-
     fi
 
 else
@@ -37,5 +50,7 @@ else
     echo "--------------"
     echo "dev build            Build tailwindcss:rp image"
     echo "dev bash             Run Bash in container"
-    echo "dev ctw              Compile Tailwind"
+    echo "dev tw-version       Show Tailwind version"
+    echo "dev tw-update        Update Tailwind"
+    echo "dev tw-compile       Compile Tailwind"
 fi
