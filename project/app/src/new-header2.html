@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <div class="tw-absolute tw-left-0 tw-top-0 xtw-p-2">
+        <div class="tw-absolute md:tw-hidden tw-left-0 tw-top-0 xtw-p-2">
             <a href="#">
                 <img class="tw-w-6 tw-ml-2 tw-mt-2" src="./images/bars-regular.svg" alt="">                
             </a>
@@ -22,17 +22,27 @@
          
          <div class="main">
             <div class="left-container ro">      
-               <div class="pic tw-pl-4 tw-pt-4">         
-                  <img class="tw-rounded-full" width="90" src="https://rogerpence.com/storage/images/rp-small.2458154.32926.png?1" alt="">
+               <div class="pic tw-pl-2 tw-pt-4">                            
+                  <img  class="tw-rounded-full tw tw-w-20 md:tw-w-32" 
+                        dddwidth="80" src="https://rogerpence.com/storage/images/rp-small.2458154.32926.png?1" alt="">
+
+                <!-- <img srcset="images/rp-80.png 420w,
+                               images/rp-120.png 1920w"
+                       sizes="(max-width: 420px) 420px,
+                              1920px"
+                      class="tw-rounded-full"                    
+                      src="images/rp-120.png" alt="rp">                 
+                -->
+
                </div>
             </div>
             <div class="right-container bo tw-pl-2">
                <section class="">
-                  <h1 class="tw-text-4xl tw-py-2">rogerpence.com</h1>
+                  <h1 class="xxtw-text-2xl xxmd:tw-text-5xl tw-py-2">rogerpence.com</h1>
                </section>
                <section class="tw-text-center">
-                  <h2 class="tw-hidden text-1xl pb-4">Teacher &bull; Developer &bull; Writer &bull; Speaker &bull; Manager</h2>
-                  <h2 class="sm:tw-hidden tw-text-1xl tw-pb-4">Teach/Develop/Write/Speak/Manage</h2>
+                  <h2 class="tw-hidden md:tw-block  tw-text-sm md:tw-text-lg tw-pb-4">Teacher &bull; Developer &bull; Writer &bull; Speaker &bull; Manager</h2>
+                  <h2 class="tw-block  md:tw-hidden tw-text-sm md:tw-text-lg tw-pb-4">Teach/Develop/Write/Speak/Manage</h2>
                </section>
                <section>
                   <div id="search-container">

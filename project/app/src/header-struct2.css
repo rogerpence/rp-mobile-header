@@ -1,10 +1,15 @@
+body {
+   font-size: calc(18px + (26 - 18) * ((100vw - 300px) / (1600 - 300)));
+   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)))
+}   
 
 div.main{
     display: grid;
     
    /* https://stackoverflow.com/questions/19848697/css-grid-where-one-column-shrinks-to-fit-content-the-other-fills-the-remaning-s*/
     
-    grid-template-columns: auto minmax(0, 1fr);
+   /* First column auto the second fills space available.  */
+   grid-template-columns: auto minmax(0, 1fr);
  }
  
 section.header-content-links {
