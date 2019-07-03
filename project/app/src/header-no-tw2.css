@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+header {
+    display: grid;
+    grid-template-areas: 
+        "image title title"
+        "image search search"
+        "image tag   tag"
+        "links links links";  
+    grid-template-columns: auto repeat(2, 1fr);
+    grid-template-rows: auto auto auto auto;
+}
+
+.image {
+    grid-area: image;
+    padding-top: .3em;
+    padding-left: .5em;
+    padding-right: .5em;
+} 
+
+.avatar {
+    border-radius: 50%;
+    margin-top: 1em;
+}
+
+.links {
+    grid-area: links;
+    justify-self: center;
+    margin-top: .5em;
+    font-size: 1.2em;
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    align-content: flex-end;
+    justify-self: start; */
+}
+
+.links a {
+    font-size: .8em;
+    text-decoration: none;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.blog-title {
+    grid-area: title;
+    font-size: 2em;
+    padding-left: .5em;
+    justify-self: start;    
+}
+
+.search-container {
+    grid-area: search;
+    justify-self: left;
+    display: flex;
+    justify-content: flex-end;   
+    align-items: center; 
+    padding-top: 2px;
+    padding-right: 1em;
+    padding-bottom: 2px;
+    padding-left: 1em; 
+    font-size: .9em;
+}
+
+.search-container img {   
+    margin-left: -16px;
+    cursor: pointer;
+}
+
+.search-container input {
+    border: none;
+    background-color: lightgray;
+    font-size: 130%;
+    padding: 2px;
+    padding-left: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;   
+    width: 100%; 
+    transition: width 500ms ease;
+}   
+
+.tag {
+    grid-area: tag;
+    font-size: 1.1em;
+    padding-left: .8em;
+    justify-self: left;
+}
+
+.tag.large {
+    display: none;
+}
+
+.tag.small {
+    display: block;
+}
+
+@media only screen and (min-width: 520px) {
+
+    header {
+        grid-template-areas: 
+            "image links links"
+            "image title search"
+            "image tag   tag";  
+        grid-template-columns: auto repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+
+    /* .links {
+        grid-area: links;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-end;
+        padding-top: .5em;
+    }
+
+    .links a {
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+
+    .blog-title {
+    }
+    */
+
+    .tag {
+        font-size: 1.1em;
+        padding-left: .8em;
+    }
+
+    .tag.large {
+        display: block;
+    }
+    
+    .tag.small {
+        display: none;
+    }
+    
+
+/*
+    .search-container {
+        grid-area: search;
+        justify-self: end;
+        display: flex;
+        justify-content: flex-end;   
+        align-items: center; 
+        padding-top: 2px;
+        padding-right: 1em;
+        padding-bottom: 2px;
+        padding-left: 2em; 
+    }
+    
+    .search-container img {   
+        margin-left: -16px;
+        cursor: pointer;
+    }
+    
+    .search-container input {
+        border: none;
+        background-color: lightgray;
+        font-size: 130%;
+        padding: 2px;
+        padding-left: 8px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;   
+        width: 100%; 
+        transition: width 500ms ease;
+    }    */
+} 
+
+
+.round-full {
+    border-radius: 50%;
+}
+
+.go {
+    border: 1px dashed lightgray;
+}
+
+
+     
+ 
